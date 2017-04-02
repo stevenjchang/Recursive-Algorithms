@@ -93,8 +93,16 @@ recursiveSum(1234);
 // PowerOfTwo(9) -> false
 
 var isPowerOfTwo = function(n){
-
+    if (n < 2 || n % 2 !== 0){
+        return false;
+    } else if (n / 2 === 2){
+        return true;
+    } else {
+        return isPowerOfTwo(n / 2);
+    }
 };
+
+isPowerOfTwo(256);
 
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
