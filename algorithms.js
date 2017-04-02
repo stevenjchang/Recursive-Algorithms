@@ -30,7 +30,6 @@ var countVowels = function(str){
       }
       if (str[0].match(vowels)){
         count++;
-        console.log('count = '+count + " str[0] = "+ str[0]);
       }    
       if (str.length > 0){
           recurse(str.slice(1));
@@ -55,8 +54,34 @@ countVowels(sample);
 // sumDigits(12) → 3
 
 var recursiveSum = function(n){
+    var num = n.toString();
+    var numLength = num.length;
 
+    if (numLength === 1){
+        return n;
+    } else {
+        return Number(num[0]) + Number(recursiveSum(num.slice(1)));
+    }
 };
+
+//second version
+var recursiveSum = function(n){
+    var num = n.toString();
+    var numLength = num.length;
+    var firstNum = Number(num[0]);
+    var restOfNums = num.slice(1);
+    
+    if (numLength === 1){
+        return n;
+    } else {
+        return firstNum + Number(recursiveSum(restOfNums));
+    }
+};
+
+recursiveSum(1234);
+
+//input: a integer
+//output: returns a number
 
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
