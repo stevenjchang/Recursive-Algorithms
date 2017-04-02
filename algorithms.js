@@ -141,26 +141,17 @@ var invest = function(amount, rate, years){
 //    printRangeUpDown(4, 10);
 //    console.logs: 4,5,6,7,8,9,10,9,8,7,6,5,4
 var printRangeUpDown = function(min, max){
-    var counter = min;
-    var goBackwards = false;
-    console.log(counter);
+    console.log(min);
 
-    if (counter === max){
-        goBackwards = true;
-        // console.log('goBackwards', goBackwards)
+    if (min >= max){
+        return;
+    } else {
+        printRangeUpDown(min + 1, max);
+        console.log(min);
     }
-
-    if (counter < max && !goBackwards){
-        printRangeUpDown(counter + 1, max)
-    } 
-    else if (goBackwards){
-        console.log('counter in else', counter);
-        printRangeUpDown(min, counter -1);
-    }
-
 };
 
-printRangeUpDown(2,4);
+printRangeUpDown(4,10);
 
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
