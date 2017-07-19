@@ -165,8 +165,35 @@ printRangeUpDown(4,10);
 // you'll need to create a binary tree constructor!
 
 var binaryTreeSum = function(tree){
+    var binaryTreeSum = function(tree){
+    var total = 0;
+    
+    var addToTotal = function(currentTree){
+        total+= currentTree.value;
+        
+        if (currentTree.left){
+            addToTotal(currentTree.left);
+        } 
+        if (currentTree.right){
+            addToTotal(currentTree.right);
+        }
+    }
+    addToTotal(tree);
+
+    return total;
+    };
+
+    var Tree = function(value){
+        this.value = value;
+        this.left;
+        this.right;
+    }
 
 };
+
+var Tree = function(value){
+    this.value = value;
+}
 
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
@@ -190,3 +217,5 @@ var binaryTreeSum = function(tree){
 var arrayToBinarySearchTree = function(array){
 
 };
+
+//take the middle of the array, 
